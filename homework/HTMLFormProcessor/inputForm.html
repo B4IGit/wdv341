@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>WDV101 Intro HTML and CSS</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    fieldset {
+      margin: 1em 1em;
+      padding: 1em 2em;
+      border: solid 3px #fff;
+      border-radius: 6px;
+    }
+
+    form {
+      width: 600px;
+      margin: auto;
+      background-color: lightblue;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    form legend {
+      font-size: larger;
+      text-align: center;
+      padding: 0 .5em;
+    }
+
+    label {
+      display: block;
+      margin-top: .5em;
+    }
+
+    input {
+      padding: .25em;
+      border: 1.5px solid #999;
+      border-radius: 6px;
+    }
+
+    .text input {
+      width: 20em;
+    }
+
+    textarea {
+      margin-top: .25em;
+      min-height: 8em;
+      min-width: 100%;
+      padding: .5em;
+      border: 1.5px solid #999;
+      border-radius: 6px;
+    }
+
+    .checks {
+      margin-top: 1em;
+    }
+
+    .checks label {
+      display: inline-block;
+      margin-bottom: .5em;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .buttons input {
+      margin-top: 1em;
+      padding: .5em 3em;
+    }
+
+    select {
+      padding: .25em;
+      border-radius: 6px;
+    }
+
+    .submit input:hover {
+      background-color: rgb(114, 170, 220);
+      border: none;
+      color: white;
+    }
+
+    .reset input:hover {
+      background-color: rgba(255, 0, 0, 0.352);
+      border: none;
+      color: white;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>WDV101 Intro HTML and CSS</h1>
+  <h2>UNIT 5 - Lesson 2 Server Side Forms</h2>
+  <p>This is an example input form that will demonstrate how a form connects to a server side process.</p>
+  <section>
+    <form id="form1" name="form1" method="post" action="formHandler.php">
+      <fieldset>
+        <legend>Example Form</legend>
+
+        <div class="text">
+          <label for="first_name">First Name:</label>
+          <input type="text" name="first_name" id="first_name" placeholder="John" />
+
+          <label for="last_name">Last Name:</label>
+          <input type="text" name="last_name" id="last_name" placeholder="Doe" />
+
+          <label for="customer_email">Email:</label>
+          <input type="email" name="customer_email" id="customer_email" placeholder="johndoe@dmacc.edu">
+
+          <label for="school_name">School Name:</label>
+          <input type="text" name="school_name" id="school_name" placeholder="DMACC" />
+        </div>
+        <br>
+
+        <div class="checks">
+          <p>Current Academic Standing:</p><br>
+          <input type="radio" id="high_school" name="current_academic_standing" value="High_School">
+          <label for="High School">High School</label><br>
+
+          <input type="radio" id="freshman" name="current_academic_standing" value="Freshman">
+          <label for="Freshman">Freshman</label><br>
+
+          <input type="radio" id="sophomore" name="current_academic_standing" value="Sophomore">
+          <label for="Sophomore">Sophomore</label>
+        </div>
+        <br>
+
+        <label for="select_major">Choose a Major of Interest </label><br>
+        <select name="majors" id="select_major">
+          <option value="default">Select one from the options</option>
+          <option value="Computer Information Systems">Computer Information Systems (CIS)</option>
+          <option value="Graphic Design">Graphic Design</option>
+          <option value="Web Development">Web Development</option>
+        </select>
+        <br><br>
+
+        <div class="checks">
+          <p>Check all that apply:</p>
+          <input type="checkbox" id="contact_information" name="program_information" value="Program_Information">
+          <label for="contact_information">Please contact me with program information</label><br>
+
+          <input type="checkbox" id="contact_advisor" name="contact_advisor" value="Program_Advisor">
+          <label for="contact_advisor">I would like to contact an program advisor</label>
+        </div>
+
+        <label for="send_us_a_message">Get in touch...</label>
+        <textarea autofocus id="send_us_a_message" name="send_us_a_message" rows="4" cols="50"
+          placeholder="Please enter a short description. We will reach out shortly."></textarea>
+
+        <div class="buttons">
+          <p>
+          <div class="submit">
+            <input type="submit" name="button" id="button" value="Submit" />
+          </div>
+          <div class="reset">
+            <input type="reset" name="button2" id="button2" value="Reset" />
+          </div>
+          </p>
+        </div>
+
+      </fieldset>
+  </section>
+  </form>
+
+  <p>&nbsp;</p>
+</body>
+
+</html>
