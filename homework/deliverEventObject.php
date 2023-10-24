@@ -36,9 +36,56 @@
         private $events_date;
         private $events_time;
 
-        public function set_events_presenter($value) {
-            $this->events_presenter = $value;
+        public function set_events_date($inDate) {
+            $this->events_date = $inDate;
         }
+
+        public function get_events_date() {
+            return $this->events_date;
+        }
+
+               public function set_events_description($inDesc) {
+                    $this->events_description = $inDesc;
+                }
+
+                public function get_events_description() {
+                    return $this->events_description;
+                }
+
+                        public function set_events_name($inName) {
+                                $this->events_name = $inName;
+                        }
+
+                        public function get_events_name() {
+                                return $this->events_name;
+                        }
+
+                                public function set_events_presenter($preSent) {
+                                    $this->events_presenter = $preSent;
+                                }
+
+                                public function get_events_presenter() {
+                                    return $this->events_presenter;
+                                }
+
+                                        public function set_events_time($inTime) {
+                                            $this->events_time = $inTime;
+                                        }
+
+                                       public  function get_events_time() {
+                                            return $this->events_time;
+                                        }
+
+            public function getEvent () {
+                $event = [];
+                $event['inDate']=$this->get_events_date();
+                $event['inDescription']= $this->get_events_description();
+                $event['inName']=$this->get_events_name();
+                $event['inPresenter']=$this->get_events_presenter();
+                $event['inTime']=$this->get_events_time();
+                return json_encode($event);
+            }
+
      }
 
      // create instance event class
