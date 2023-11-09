@@ -4,6 +4,12 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>WDV101 Intro HTML and CSS</title>
 
+  <head>
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Let0QcpAAAAAElRYfP1-LfqPh3jRX7qplv0L6dI" async
+      defer></script>
+    <!-- Your code -->
+  </head>
+
   <style>
     * {
       margin: 0;
@@ -94,6 +100,13 @@
     }
   </style>
 
+  <!-- Replace the variables below. -->
+  <script>
+    function onSubmit(token) {
+      document.getElementById("form1").submit();
+    }
+  </script>
+
 </head>
 
 <body>
@@ -155,9 +168,12 @@
         <textarea autofocus id="send_us_a_message" name="send_us_a_message" rows="4" cols="50"
           placeholder="Please enter a short description. We will reach out shortly."></textarea>
 
+
+
         <div class="buttons">
           <p>
-          <div class="submit">
+          <div id="submit" class="g-recaptcha" data-sitekey="6Let0QcpAAAAAElRYfP1-LfqPh3jRX7qplv0L6dI"
+            data-callback='onSubmit' data-action='submit'>
             <input type="submit" name="button" id="button" value="Submit" />
           </div>
           <div class="reset">

@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>WDV101 Basic Form Handler Example</title>
 
+
 <style>
 	.output {
 		margin: 2em;
@@ -56,13 +57,18 @@
 	<p>You have declared, <b><?php echo preg_replace("/_/i", ' ' , $_POST['majors'])?></b> as your major.</p>
 	<p>Based upon your responses, we will provide the following information in our confirmation email to you at <b><?php echo preg_replace("/_/i", ' ' , $_POST['customer_email'])?></b>.</p>
 	<ul>
-	<b><?php echo preg_replace("/_/i", ' ' , $_POST['program_information'])?></b><br>
-	<b><?php echo preg_replace("/_/i", ' ' , $_POST['contact_advisor'])?></b>
+	<?php if (isset($_POST['program_information'])) {
+  		echo '<b>' . preg_replace("/_/i", ' ', $_POST['program_information']) . '</b><br>';
+		}?>
+	<?php if (isset($_POST['contact_advisor'])) {
+  		echo '<b>' . preg_replace("/_/i", ' ', $_POST['contact_advisor']) . '</b><br>';
+		}?>
 	</ul>
 	<p>You have shared the following comments which we will review: <br>
 	<div class="textbox">
 	<i>"<?php echo preg_replace("/_/i", ' ' , $_POST['send_us_a_message'])?>"</i></p>
 	</div>
+	
 </div>
 </div>
 
