@@ -4,11 +4,17 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>WDV101 Intro HTML and CSS</title>
 
-  <head>
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Let0QcpAAAAAElRYfP1-LfqPh3jRX7qplv0L6dI" async
-      defer></script>
-    <!-- Your code -->
-  </head>
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6Let0QcpAAAAAElRYfP1-LfqPh3jRX7qplv0L6dI" async
+    defer></script>
+
+
+  <!-- Replace the variables below. -->
+  <script>
+    function onSubmit(token) {
+      document.getElementById("form1").submit();
+    }
+  </script>
+
 
   <style>
     * {
@@ -98,15 +104,16 @@
       border: none;
       color: white;
     }
-  </style>
 
-  <!-- Replace the variables below. -->
-  <script>
-    function onSubmit(token) {
-      document.getElementById("form1").submit();
+
+    [for="middle_name"] {
+      display: none;
     }
-  </script>
 
+    [name="middle_name"] {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -119,17 +126,31 @@
         <legend>Example Form</legend>
 
         <div class="text">
-          <label for="first_name">First Name:</label>
-          <input type="text" name="first_name" id="first_name" placeholder="John" />
+          <p>
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" id="first_name" placeholder="John">
+          </p>
 
-          <label for="last_name">Last Name:</label>
-          <input type="text" name="last_name" id="last_name" placeholder="Doe" />
+          <p>
+            <label for="middle_name">Middle Name:</label>
+            <input type="text" name="middle_name" id="middle_name" placeholder="Jane">
+          </p>
 
-          <label for="customer_email">Email:</label>
-          <input type="email" name="customer_email" id="customer_email" placeholder="johndoe@dmacc.edu">
+          <p>
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name" id="last_name" placeholder="Doe">
+          </p>
 
-          <label for="school_name">School Name:</label>
-          <input type="text" name="school_name" id="school_name" placeholder="DMACC" />
+          <p>
+            <label for="customer_email">Email:</label>
+            <input type="email" name="customer_email" id="customer_email" placeholder="johndoe@dmacc.edu">
+          </p>
+
+          <p>
+            <label for="school_name">School Name:</label>
+            <input type="text" name="school_name" id="school_name" placeholder="DMACC">
+          </p>
+
         </div>
         <br>
 
@@ -172,9 +193,10 @@
 
         <div class="buttons">
           <p>
-          <div id="submit" class="g-recaptcha" data-sitekey="6Let0QcpAAAAAElRYfP1-LfqPh3jRX7qplv0L6dI"
-            data-callback='onSubmit' data-action='submit'>
-            <input type="submit" name="button" id="button" value="Submit" />
+          <div>
+            <input type="submit" name="button" id="button" value="Submit" class="g-recaptcha"
+              data-sitekey="6Let0QcpAAAAAElRYfP1-LfqPh3jRX7qplv0L6dI" data-callback='onSubmit' data-action='submit'>
+            </button>
           </div>
           <div class="reset">
             <input type="reset" name="button2" id="button2" value="Reset" />

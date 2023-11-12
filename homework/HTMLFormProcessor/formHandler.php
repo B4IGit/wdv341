@@ -1,4 +1,29 @@
+<?php
 
+//from processing/server side form processing
+//get the form data from the client
+//-validate from - active user, makes sure this from was submitted by a person and NOT a bot
+//-process the form data
+
+//get the data from the $_POST - associative array of the name-value pairs from client form
+
+$firstName = $_POST[ 'first_name' ];
+$lastName = $_POST[ 'last_name' ];
+$middleName = $_POST[ 'middle_name' ];
+$customerEmail = $_POST[ 'customer_email' ];
+$schoolName = $_POST[ 'school_name' ];
+
+
+if(empty($middleName)) {
+	// is a real person
+	$message = 'Thank you ' . '<b>'. $firstName . ' ' . $lastName . '</b>' . '. A signup confirmation has been sent to ' . '<b>' . $customerEmail . '</b>' . '. Thank you for your support!';
+}
+else {
+	//	is a bot, DO NOT SEND
+	$message = 'Unexpected Error: site is no longer available';
+	
+}
+?>
 <!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -49,13 +74,15 @@
 	echo "<p>&nbsp;</p>";
 ?>
 
+<p><?php echo $message;?></p>
+
 <div class="output">
-	<p>Dear <b><?php echo $_POST["first_name"] . " " . $_POST["last_name"]?></b>,</p>
+	<p>Dear <b><?php echo $firstName . " " . $lastName?></b>,</p>
 	<div class="indent">
-	<p>Thank you for your interest in <b><?php echo $_POST["school_name"]?></b>.</p>
+	<p>Thank you for your interest in <b><?php echo $schoolName?></b>.</p>
 	<p>We have your academic standing as <b><?php echo preg_replace("/_/i", ' ' , $_POST['current_academic_standing'])?></b> starting this fall.</p>
 	<p>You have declared, <b><?php echo preg_replace("/_/i", ' ' , $_POST['majors'])?></b> as your major.</p>
-	<p>Based upon your responses, we will provide the following information in our confirmation email to you at <b><?php echo preg_replace("/_/i", ' ' , $_POST['customer_email'])?></b>.</p>
+	<p>Based upon your responses, we will provide the following information in our confirmation email to you at <b><?php echo $customerEmail?></b>.</p>
 	<ul>
 	<?php if (isset($_POST['program_information'])) {
   		echo '<b>' . preg_replace("/_/i", ' ', $_POST['program_information']) . '</b><br>';
