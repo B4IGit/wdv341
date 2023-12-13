@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.grid-container {
+  display: grid;
+  max-width: 100%;
+  gap: 8px;
+  margin: 16px;
+  grid-template-columns: repeat(6, 1fr);
+  background-color: #edede9;
+  border-radius: 16px;
+}
+
+.main-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 8px;
+}
+
+.footer-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 8px;
+}
+
+.grid-container > :nth-child(1) {
+  grid-column: span 6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+.grid-container > :nth-child(1) .navLogo {
+  color: #000;
+  font-size: 1.815em;
+}
+.grid-container > :nth-child(1) .navLinks a {
+  color: #000;
+  padding: 1em;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+.grid-container > :nth-child(1) .navLinks .styleLinks a:hover {
+  text-transform: uppercase;
+}
+.grid-container > :nth-child(1) .navLinks a .login {
+  color: #fff;
+  background-color: #524457;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+}
+.grid-container > :nth-child(1) .navLinks a .login:hover {
+  color: #000;
+  background-color: #ece8f8;
+  border: 2px solid #524457;
+}
+
+.grid-container > :nth-child(2) {
+  grid-column: span 6;
+  background-image: url(../images/homeBanner.jpg);
+  background-repeat: no-repeat;
+  padding: 4em;
+}
+.grid-container > :nth-child(2) .banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grid-container > :nth-child(2) .banner a {
+  text-decoration: none;
+}
+.grid-container > :nth-child(2) .banner-bg {
+  background-color: rgba(175, 199, 147, 0.5960784314);
+  padding: 3em;
+  text-align: center;
+  border-radius: 16px;
+}
+.grid-container > :nth-child(2) .banner-text h2 {
+  font-size: 1.815em;
+  color: #fff;
+}
+.grid-container > :nth-child(2) .banner-text h1 {
+  font-size: 2.5em;
+  color: #fff;
+  margin: 0.2em;
+}
+.grid-container > :nth-child(2) .banner-text .banner-btn {
+  margin-top: 1.5em;
+}
+.grid-container > :nth-child(2) .banner-text .banner-btn a {
+  color: #fff;
+  background-color: #524457;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+}
+.grid-container > :nth-child(2) .banner-text .banner-btn a:hover {
+  color: #000;
+  background-color: #ece8f8;
+  border: 2px solid #524457;
+}
+
+.grid-container > :nth-child(3) {
+  grid-column: span 6;
+  border-radius: 16px;
+  margin: 2.5em;
+}
+.grid-container > :nth-child(3) h1 {
+  color: #524457;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0.5em 0;
+}
+.grid-container > :nth-child(3) .main-section {
+  color: #fff;
+  background-color: #524457;
+  border-radius: 16px;
+}
+.grid-container > :nth-child(3) .main-section .main-card {
+  grid-column: span 1;
+  margin: 1em;
+  padding: 0.5em;
+  color: #000;
+  border-radius: 8px;
+  background-color: #ece8f8;
+}
+.grid-container > :nth-child(3) .space {
+  margin-top: 2em;
+}
+
+img[alt~=christmas] {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.grid-container > :nth-child(4) {
+  grid-column: span 6;
+  background-color: #afc793;
+  border-radius: 0 0 16px 16px;
+}
+.grid-container > :nth-child(4) .footer-card {
+  grid-column: span 1;
+  margin: 1em;
+  padding: 0.5em;
+  text-align: center;
+  color: #000;
+}
+.grid-container > :nth-child(4) .footer-section > :nth-child(1) span.navLogo {
+  font-size: 1.2rem;
+}
+.grid-container > :nth-child(4) .footer-section > :nth-child(1) p {
+  margin-top: 8px;
+}
+.grid-container > :nth-child(4) .footer-section > :nth-child(2) .subscribeEmail {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.grid-container > :nth-child(4) .footer-section > :nth-child(2) .subscribeEmail input {
+  flex-grow: 2;
+  border: none;
+  border-radius: 8px;
+  position: relative;
+  display: inline-flex;
+  padding: 3px;
+  border: 2px solid #524457;
+  background-color: #edede9;
+}
+.grid-container > :nth-child(4) .footer-section > :nth-child(2) .subscribeEmail input::placeholder {
+  color: #000;
+}
+.grid-container > :nth-child(4) .footer-section > :nth-child(2) .subscribeEmail button {
+  color: #fff;
+  background-color: #524457;
+  width: 10em;
+  padding: 3px;
+  border: 2px solid #524457;
+  border-radius: 8px;
+  position: absolute;
+  right: 0;
+}
+.grid-container > :nth-child(4) .footer-section > :nth-child(2) .subscribeEmail button:hover {
+  color: #000;
+  background-color: #ece8f8;
+}
+.grid-container > :nth-child(4) .footer-section > :nth-child(4) {
+  grid-column: span 3;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(1fr);
+    grid-template-rows: auto minmax(5rem, auto) 1fr minmax(5rem, auto) auto;
+  }
+  .main-section {
+    grid-template-columns: repeat(1fr);
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-section {
+    grid-template-columns: repeat(1fr);
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

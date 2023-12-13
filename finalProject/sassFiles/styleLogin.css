@@ -1,0 +1,293 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.grid-login-page-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "nav nav nav nav nav nav" "content content content content content content" "footer footer footer footer footer footer" "rights rights rights rights rights rights";
+  min-height: 100vh;
+}
+
+.nested-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+nav {
+  grid-area: nav;
+}
+
+main {
+  grid-area: content;
+  padding: 10rem 0;
+  background-color: #fff;
+}
+
+footer {
+  grid-area: footer;
+  padding: 1rem;
+  background-color: #afc793;
+}
+
+.copy-rights {
+  grid-area: rights;
+  background-color: #afc793;
+}
+
+nav .navBar {
+  background-color: #edede9;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 16px 16px 0 0;
+}
+nav .navBar .navLogo {
+  font-size: 1.815em;
+  text-transform: uppercase;
+}
+nav .navBar .navLinks a:nth-child(1),
+nav .navBar .navLinks a:nth-child(2),
+nav .navBar .navLinks a:nth-child(3),
+nav .navBar .navLinks a:nth-child(4) {
+  color: #000;
+  text-decoration: none;
+  padding: 0 2em;
+}
+nav .navBar .navLinks a:nth-child(4) {
+  margin-right: 1em;
+}
+nav .navBar .navLinks a:nth-child(1):hover,
+nav .navBar .navLinks a:nth-child(2):hover,
+nav .navBar .navLinks a:nth-child(3):hover,
+nav .navBar .navLinks a:nth-child(4):hover {
+  text-transform: uppercase;
+}
+nav .navBar .navLinks a:nth-child(5) {
+  color: #ece8f8;
+  background-color: #524457;
+  text-decoration: none;
+  padding: 8px 32px;
+  border-radius: 16px;
+}
+nav .navBar a:nth-child(5):hover {
+  color: #524457;
+  background-color: #ece8f8;
+  border: 2px solid #524457;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.login-wrapper {
+  width: 600px;
+  background-color: #ece8f8;
+  color: #000;
+  border-radius: 16px;
+  padding: 1em;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.login-wrapper .login-page h1 {
+  text-align: center;
+  margin: 2rem auto;
+}
+.login-wrapper .login-page h2 {
+  color: #524457;
+}
+.login-wrapper .login-page ol {
+  margin-left: 2rem;
+}
+.login-wrapper h1 {
+  font-size: 1.815em;
+  text-align: center;
+  color: #524457;
+}
+.login-wrapper .input-box {
+  width: 100%;
+  margin: 30px 0;
+  position: relative;
+}
+.login-wrapper .input-box i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+.login-wrapper .input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 2px solid #524457;
+  outline: none;
+  border-radius: 40px;
+  font-size: 1em;
+  padding: 20px 45px 20px 20px;
+}
+.login-wrapper .input-box input::placeholder {
+  color: #000;
+}
+.login-wrapper .remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1em;
+  margin: -15px 0 15px;
+}
+.login-wrapper .remember-forgot label input {
+  margin-right: 3px;
+}
+.login-wrapper .remember-forgot a {
+  color: #524457;
+  text-decoration: none;
+}
+.login-wrapper .remember-forgot a:hover {
+  text-decoration: underline;
+}
+.login-wrapper .submitBtn {
+  width: 100%;
+  height: 45px;
+  color: #ece8f8;
+  background-color: #524457;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0px 10px 6px -7px rgba(0, 0, 0, 0.63);
+  -webkit-box-shadow: 0px 10px 6px -7px rgba(0, 0, 0, 0.63);
+  -moz-box-shadow: 0px 10px 6px -7px rgba(0, 0, 0, 0.63);
+  font-size: 1em;
+  font-weight: 600;
+}
+.login-wrapper .submitBtn:hover {
+  color: #524457;
+  background-color: #ece8f8;
+  border: 2px solid #524457;
+}
+.login-wrapper .register-link {
+  font-size: 1em;
+  text-align: center;
+  margin: 0.5em 0;
+}
+.login-wrapper .register-link a {
+  color: #524457;
+  text-decoration: none;
+}
+.login-wrapper .register-link a:hover {
+  text-decoration: underline;
+}
+
+.nested-grid {
+  margin-top: 2rem;
+}
+
+.nested-grid,
+.copy-rights {
+  text-align: center;
+}
+
+.nested-grid > :nth-child(1) span.navLogo {
+  font-size: 1.2rem;
+}
+.nested-grid > :nth-child(1) p {
+  margin-top: 8px;
+}
+
+.nested-grid > :nth-child(2) .subscribeEmail {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.nested-grid > :nth-child(2) .subscribeEmail input {
+  flex-grow: 2;
+  border: none;
+  border-radius: 8px;
+  position: relative;
+  display: inline-flex;
+  padding: 3px;
+  border: 2px solid #524457;
+  background-color: #edede9;
+}
+.nested-grid > :nth-child(2) .subscribeEmail input::placeholder {
+  color: #000;
+}
+.nested-grid > :nth-child(2) .subscribeEmail button {
+  color: #fff;
+  background-color: #524457;
+  width: 10em;
+  padding: 3px;
+  border: 2px solid #524457;
+  border-radius: 8px;
+  position: absolute;
+  right: 0;
+}
+.nested-grid > :nth-child(2) .subscribeEmail button:hover {
+  color: #000;
+  background-color: #ece8f8;
+}
+
+.copy-rights {
+  padding: 8px;
+  border-radius: 0 0 16px 16px;
+}
+
+@media (max-width: 1024px) {
+  .grid-login-page-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(5rem, auto) 1fr minmax(5rem, auto) auto;
+    grid-template-areas: "nav" "main" "footer" "rights";
+  }
+  .nested-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(5rem, auto) 1fr minmax(5rem, auto) auto;
+  }
+  nav {
+    grid-area: nav;
+  }
+  main {
+    grid-area: content;
+    padding: 1rem 0;
+    background-color: #fff;
+  }
+  footer {
+    grid-area: footer;
+    padding: 1rem;
+    background-color: #afc793;
+  }
+  .navLogo p {
+    font-size: 1.5rem;
+  }
+  .nested-grid > :nth-child(1) {
+    display: flex;
+    flex-direction: column;
+  }
+  .copy-rights {
+    grid-area: rights;
+    background-color: #afc793;
+  }
+  .footer-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nested-grid > :nth-child(1) p {
+    margin: 1rem 0 0 0;
+  }
+  .nested-grid > :nth-child(2),
+  .subscribeEmail,
+  input,
+  button {
+    display: block;
+    margin: 1rem;
+    position: static;
+  }
+}
+
+/*# sourceMappingURL=styleLogin.css.map */

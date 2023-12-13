@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    //border: 1px solid red;
+}
+
+$color-primary: #afc793;
+$color-secondary: #524457;
+$color-accent: #ece8f8;
+$color-container: #edede9;
+
+$text-primary: #000;
+$text-secondary: #fff;
+
+$font-large: 2.5em;
+$font-medium: 1.815em;
+$font-small: 1.2rem;
+
+
+//  START INDEX.PHP (HOMEPAGE)
+
+.grid-container {
+    display: grid;
+    max-width: 100%;
+    gap: 8px;
+    margin: 16px;
+    grid-template-columns: repeat(6, 1fr);
+    background-color: $color-container;
+    border-radius: 16px;
+}
+
+.main-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 8px;
+}
+
+.footer-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 8px;
+}
+
+//end gird-container
+
+// start grid-nav
+.grid-container> :nth-child(1) {
+    grid-column: span 6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+
+    .navLogo {
+        color: $text-primary;
+        font-size: $font-medium;
+    }
+
+    // start nav-link
+    .navLinks {
+        a {
+            color: $text-primary;
+            //margin: 0 1.2em 0 1.2em; // this gives more space, not sure if I need it.
+            padding: 1em;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        .styleLinks a:hover {
+            //font-size: 1.3em;
+            text-transform: uppercase;
+        }
+
+        a .login {
+            color: $text-secondary;
+            background-color: $color-secondary;
+            padding: .5em 1em;
+            border-radius: 1em;
+        }
+
+        a .login:hover {
+            color: $text-primary;
+            background-color: $color-accent;
+            border: 2px solid $color-secondary;
+        }
+    }
+
+    //end nav-link
+}
+
+//end grid-nav
+
+// start grid-banner
+.grid-container> :nth-child(2) {
+    grid-column: span 6;
+    background-image: url(../images/homeBanner.jpg);
+    background-repeat: no-repeat;
+    padding: 4em;
+
+    .banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .banner-bg {
+        background-color: #afc79398;
+        padding: 3em;
+        text-align: center;
+        border-radius: 16px;
+    }
+
+    .banner-text {
+        h2 {
+            font-size: $font-medium;
+            color: $text-secondary;
+        }
+
+        h1 {
+            font-size: $font-large;
+            color: $text-secondary;
+            margin: .2em;
+        }
+
+        .banner-btn {
+            margin-top: 1.5em;
+
+            a {
+                color: $text-secondary;
+                background-color: $color-secondary;
+                padding: .5em 1em;
+                border-radius: 1em;
+            }
+
+            a:hover {
+                color: $text-primary;
+                background-color: $color-accent;
+                border: 2px solid $color-secondary;
+            }
+        }
+    }
+}
+
+//end grid-banner
+
+//  start grid-main
+.grid-container> :nth-child(3) {
+    //background-color: $color-secondary;
+    grid-column: span 6;
+    border-radius: 16px;
+    margin: 2.5em;
+
+    h1 {
+        color: $color-secondary;
+        text-align: center;
+        text-transform: uppercase;
+        margin: .5em 0;
+    }
+
+    .main-section {
+        color: $text-secondary;
+        background-color: $color-secondary;
+        border-radius: 16px;
+
+        .main-card {
+            grid-column: span 1;
+            margin: 1em;
+            padding: .5em;
+            color: #000;
+            border-radius: 8px;
+            background-color: $color-accent;
+        }
+    }
+
+    .space {
+        margin-top: 2em;
+    }
+}
+
+img[alt~="christmas"] {
+    width: 100%;
+    border-radius: 8px;
+}
+
+//end grid-main
+
+//  start grid-footer
+.grid-container> :nth-child(4) {
+    grid-column: span 6;
+    background-color: #afc793;
+    border-radius: 0 0 16px 16px;
+
+    .footer-card {
+        grid-column: span 1;
+        margin: 1em;
+        padding: .5em;
+        text-align: center;
+        color: $text-primary;
+    }
+
+    //  end footer-card
+
+    .footer-section> :nth-child(1) {
+        // text-align: left;    //  align left?
+
+        span.navLogo {
+            font-size: $font-small;
+        }
+
+        p {
+            margin-top: 8px;
+        }
+    }
+
+    //  end first footer wrapper (left, top)
+
+    .footer-section> :nth-child(2) {
+        .subscribeEmail {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+
+            input {
+                flex-grow: 2;
+                border: none;
+                border-radius: 8px;
+                position: relative;
+                display: inline-flex;
+                padding: 3px;
+                border: 2px solid $color-secondary;
+                background-color: $color-container;
+            }
+
+            input::placeholder {
+                color: $text-primary;
+            }
+
+            button {
+                color: $text-secondary;
+                background-color: $color-secondary;
+                width: 10em;
+                padding: 3px;
+                border: 2px solid $color-secondary;
+                border-radius: 8px;
+                position: absolute;
+                right: 0;
+            }
+
+            button:hover {
+                color: $text-primary;
+                background-color: $color-accent;
+            }
+        }
+    }
+
+    //  end second footer wrapper (middle, middle)
+
+    .footer-section> :nth-child(4) {
+        grid-column: span 3;
+        text-align: center;
+        margin-bottom: .5em;
+    }
+
+    //  end footer copyRights
+}
+
+//  end grid-container
+
+//  END INDEX.PHP (HOMEPAGE)
+
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(1fr);
+        grid-template-rows: auto minmax(5rem, auto) 1fr minmax(5rem, auto) auto;
+    }
+
+    .main-section {
+        grid-template-columns: repeat(1fr);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-section {
+        grid-template-columns: repeat(1fr);
+        display: flex;
+        flex-direction: column;
+    }
+}

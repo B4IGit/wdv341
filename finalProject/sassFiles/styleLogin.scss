@@ -1,0 +1,407 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    //border: 1px solid red;
+}
+
+$color-primary: #afc793;
+$color-secondary: #524457;
+$color-accent: #ece8f8;
+$color-container: #edede9;
+
+$text-primary: #000;
+$text-secondary: #fff;
+
+$font-large: 2.5em;
+$font-medium: 1.815em;
+$font-small: 1.2rem;
+
+.grid-login-page-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "nav nav nav nav nav nav"
+        "content content content content content content"
+        "footer footer footer footer footer footer"
+        "rights rights rights rights rights rights";
+    min-height: 100vh;
+}
+
+.nested-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+nav {
+    grid-area: nav;
+    // background-color: #524457;
+}
+
+main {
+    grid-area: content;
+    padding: 10rem 0;
+    background-color: #fff;
+}
+
+footer {
+    grid-area: footer;
+    padding: 1rem;
+    background-color: $color-primary;
+}
+
+.copy-rights {
+    grid-area: rights;
+    background-color: $color-primary;
+}
+
+//  START style navigation
+
+nav .navBar {
+    background-color: $color-container;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 16px 16px 0 0;
+
+    .navLogo {
+        font-size: $font-medium;
+        text-transform: uppercase;
+    }
+
+    .navLinks a:nth-child(1),
+    .navLinks a:nth-child(2),
+    .navLinks a:nth-child(3),
+    .navLinks a:nth-child(4) {
+        color: $text-primary;
+        text-decoration: none;
+        padding: 0 2em;
+    }
+
+    .navLinks a:nth-child(4) {
+        margin-right: 1em;
+    }
+
+    .navLinks a:nth-child(1):hover,
+    .navLinks a:nth-child(2):hover,
+    .navLinks a:nth-child(3):hover,
+    .navLinks a:nth-child(4):hover {
+        text-transform: uppercase;
+    }
+
+
+    .navLinks a:nth-child(5) {
+        color: $color-accent;
+        background-color: $color-secondary;
+        text-decoration: none;
+        padding: 8px 32px;
+        border-radius: 16px;
+    }
+
+    a:nth-child(5):hover {
+        color: $color-secondary;
+        background-color: $color-accent;
+        border: 2px solid $color-secondary;
+    }
+}
+
+//END nav.NavBar
+
+// START style main section and LOGIN form
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    //background-color: $color-primary;
+}
+
+.login-wrapper {
+    width: 600px;
+    background-color: $color-accent;
+    color: $text-primary;
+    border-radius: 16px;
+    padding: 1em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    .login-page {
+        h1 {
+            text-align: center;
+            margin: 2rem auto;
+        }
+        h2 {
+            color: $color-secondary;
+        }
+        ol {
+            margin-left: 2rem;
+        }
+    }
+
+
+    h1 {
+        font-size: $font-medium;
+        text-align: center;
+        color: $color-secondary;
+    }
+
+    .input-box {
+        width: 100%;
+        //height: 50px;
+        margin: 30px 0;
+        position: relative;
+
+        i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+        }
+    }
+
+    //  end input-box
+
+    .input-box input {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: 2px solid $color-secondary;
+        outline: none;
+        border-radius: 40px;
+        font-size: 1em;
+        padding: 20px 45px 20px 20px;
+    }
+
+    .input-box input::placeholder {
+        color: $text-primary;
+    }
+
+
+    .remember-forgot {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1em;
+        margin: -15px 0 15px;
+
+        label input {
+            margin-right: 3px;
+        }
+
+        a {
+            color: $color-secondary;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+
+    //  end remember-forgot
+
+    .submitBtn {
+        width: 100%;
+        height: 45px;
+        color: $color-accent;
+        background-color: $color-secondary;
+        border: none;
+        outline: none;
+        border-radius: 40px;
+        box-shadow: 0px 10px 6px -7px rgba(0, 0, 0, 0.63);
+        -webkit-box-shadow: 0px 10px 6px -7px rgba(0, 0, 0, 0.63);
+        -moz-box-shadow: 0px 10px 6px -7px rgba(0, 0, 0, 0.63);
+        font-size: 1em;
+        font-weight: 600;
+    }
+
+    .submitBtn:hover {
+        color: $color-secondary;
+        background-color: $color-accent;
+        border: 2px solid $color-secondary;
+    }
+
+    .register-link {
+        font-size: 1em;
+        text-align: center;
+        margin: .5em 0;
+
+        a {
+            color: $color-secondary;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+//  END main section and LOGIN
+
+//  START footer section and copy rights
+
+.nested-grid {
+    margin-top: 2rem;
+}
+
+.nested-grid,
+.copy-rights {
+    text-align: center;
+}
+
+.nested-grid> :nth-child(1) {
+    // text-align: left;    //  align left?
+
+    span.navLogo {
+        font-size: $font-small;
+    }
+
+    p {
+        margin-top: 8px;
+    }
+}
+
+//  end first footer wrapper (left, top)
+
+.nested-grid> :nth-child(2) {
+    .subscribeEmail {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+
+        input {
+            flex-grow: 2;
+            border: none;
+            border-radius: 8px;
+            position: relative;
+            display: inline-flex;
+            padding: 3px;
+            border: 2px solid $color-secondary;
+            background-color: $color-container;
+        }
+
+        input::placeholder {
+            color: $text-primary;
+        }
+
+        button {
+            color: $text-secondary;
+            background-color: $color-secondary;
+            width: 10em;
+            padding: 3px;
+            border: 2px solid $color-secondary;
+            border-radius: 8px;
+            position: absolute;
+            right: 0;
+        }
+
+        button:hover {
+            color: $text-primary;
+            background-color: $color-accent;
+        }
+    }
+}
+
+.copy-rights {
+    padding: 8px;
+    border-radius: 0 0 16px 16px;
+}
+
+//  end second footer wrapper (middle, middle)
+
+//  style login-page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:1024px) {
+    .grid-login-page-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto minmax(5rem, auto) 1fr minmax(5rem, auto) auto;
+        grid-template-areas:
+            "nav"
+            "main"
+            "footer"
+            "rights";
+    }
+
+    .nested-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto minmax(5rem, auto) 1fr minmax(5rem, auto) auto;
+    }
+
+    nav {
+        grid-area: nav;
+        // background-color: #524457;
+    }
+
+    main {
+        grid-area: content;
+        padding: 1rem 0;
+        background-color: #fff;
+    }
+
+    footer {
+        grid-area: footer;
+        padding: 1rem;
+        background-color: $color-primary;
+    }
+
+    .navLogo p {
+        font-size: 1.5rem;
+    }
+
+    .nested-grid> :nth-child(1) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .copy-rights {
+        grid-area: rights;
+        background-color: $color-primary;
+    }
+
+    .footer-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nested-grid> :nth-child(1) p {
+        margin: 1rem 0 0 0;
+    }
+
+    .nested-grid> :nth-child(2),
+    .subscribeEmail,
+    input,
+    button {
+        display: block;
+        margin: 1rem;
+        position: static;
+    }
+
+
+}
