@@ -1,5 +1,6 @@
 <?php
 
+global $conn;
 session_start();    // join an existing session, if any, otherwise start a new session
 
 
@@ -91,7 +92,7 @@ else {
         require 'database/dbConnect.php';
 
         // $sql = 'SELECT event_user_name, event_user_password from wdv341_event_users WHERE event_user_name = :userName';
-        $sql = 'SELECT COUNT(*) from wdv341_event_users WHERE event_user_name = :userName AND event_user_password = :passWord';
+        $sql = 'SELECT COUNT(*) FROM wdv341_event_users WHERE event_user_name = :userName AND event_user_password = :passWord';
 
         $stmt = $conn->prepare($sql);
 

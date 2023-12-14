@@ -1,6 +1,5 @@
 <?php
 
-
 require 'sessionFolder/database/dbConnect.php';        //copies the content of the dbConnect.php INTO this page
 
 //2. Create your SQL command
@@ -33,6 +32,7 @@ $productsArray = $stmt->fetch();
     <title>Trendy Florals</title>
     <link type="text/css" rel="stylesheet" href="./sassFiles/main.css">
     <link type="text/css" rel="stylesheet" href="./sassFiles/main.scss">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -45,7 +45,7 @@ $productsArray = $stmt->fetch();
                 <span class="styleLinks">
                     <a href="/wdv341/finalProject/index.php">Home</a>
                     <a href="#about">About Us</a>
-                    <a href="#contact">Contact</a>
+                    <a href="contact.php">Contact</a>
                     <a href="#shop">Shop</a>
                     <a href="#checkout">Checkout</a>
                 </span>
@@ -70,66 +70,72 @@ $productsArray = $stmt->fetch();
             <div class="main-section" id="main-section">
                 <div class="main-card" id="main-card">
                     <div class="img-card" id="img-card">
-                        <img src="images/homeMainCard1.jpg" alt="christmas">
+                        <img src="<?php echo 'productImages/' . $row_1_ProductsArray['product_image'];?>" alt="christmas">
                     </div>
                     <div class="card-overlay">
                         <h3><?php echo $row_1_ProductsArray['product_name'];?></h3>
-                        <h4><?php echo $row_2_ProductsArray['product_name'];?></h4>
+                        <h4>$<?php echo $row_1_ProductsArray['product_price'];?></h4>
                     </div>
                 </div>
                 <div class="main-card" id="main-card">
                     <div class="img-card" id="img-card">
-                        <img src="images/homeMainCard1.jpg" alt="christmas">
+                        <img src="<?php echo 'productImages/' . $row_2_ProductsArray['product_image'];?>" alt="christmas">
                     </div>
-                    <h3>product</h3>
-                    <h4>price</h4>
+                    <div class="card-overlay">
+                        <h3><?php echo $row_2_ProductsArray['product_name'];?></h3>
+                        <h4>$<?php echo $row_2_ProductsArray['product_price'];?></h4>
+                    </div>
                 </div>
                 <div class="main-card" id="main-card">
                     <div class="img-card" id="img-card">
-                        <img src="images/homeMainCard1.jpg" alt="christmas">
+                        <img src="<?php echo 'productImages/' . $row_3_ProductsArray['product_image'];?>" alt="christmas">
                     </div>
-                    <h3>product</h3>
-                    <h4>price</h4>
+                    <div class="card-overlay">
+                        <h3><?php echo $row_3_ProductsArray['product_name'];?></h3>
+                        <h4>$<?php echo $row_3_ProductsArray['product_price'];?></h4>
+                    </div>
                 </div>
                 <div class="main-card" id="main-card">
                     <div class="img-card" id="img-card">
-                        <img src="images/homeMainCard1.jpg" alt="christmas">
+                        <img src="<?php echo 'productImages/' . $row_4_ProductsArray['product_image'];?>" alt="christmas">
                     </div>
-                    <h3>product</h3>
-                    <h4>price</h4>
+                    <div class="card-overlay">
+                        <h3><?php echo $row_4_ProductsArray['product_name'];?></h3>
+                        <h4>$<?php echo $row_4_ProductsArray['product_price'];?></h4>
+                    </div>
                 </div>
             </div>
             <h1 class="space">Trendy Picks</h1>
             <div class="main-section" id="main-section">
                 <div class="main-card" id="main-card">
                     <div class="img-card" id="img-card">
-                        <img src="images/homeMainCard1.jpg" alt="christmas">
+                        <img src="<?php echo 'productImages/' . $row_5_ProductsArray['product_image'];?>" alt="christmas">
                     </div>
                     <div class="card-overlay">
-                        <h3>product</h3>
-                        <h4>price</h4>
+                        <h3><?php echo $row_5_ProductsArray['product_name'];?></h3>
+                        <h4>$<?php echo $row_5_ProductsArray['product_price'];?></h4>
                     </div>
                 </div>
                 <div class="main-card" id="main-card">
                     <div class="img-card" id="img-card">
-                        <img src="images/homeMainCard1.jpg" alt="christmas">
+                        <img src="<?php echo 'productImages/' . $row_6_ProductsArray['product_image'];?>" alt="christmas">
                     </div>
-                    <h3>product</h3>
-                    <h4>price</h4>
+                    <h3><?php echo $row_6_ProductsArray['product_name'];?></h3>
+                    <h4>$<?php echo $row_6_ProductsArray['product_price'];?></h4>
                 </div>
                 <div class="main-card" id="main-card">
                     <div class="img-card" id="img-card">
-                        <img src="images/homeMainCard1.jpg" alt="christmas">
+                        <img src="<?php echo 'productImages/' . $row_7_ProductsArray['product_image'];?>" alt="christmas">
                     </div>
-                    <h3>product</h3>
-                    <h4>price</h4>
+                    <h3><?php echo $row_7_ProductsArray['product_name'];?></h3>
+                    <h4>$<?php echo $row_7_ProductsArray['product_price'];?></h4>
                 </div>
                 <div class="main-card" id="main-card">
                     <div class="img-card" id="img-card">
-                        <img src="images/homeMainCard1.jpg" alt="christmas">
+                        <img src="<?php echo 'productImages/' . $row_8_ProductsArray['product_image'];?>" alt="christmas">
                     </div>
-                    <h3>product</h3>
-                    <h4>price</h4>
+                    <h3><?php echo $row_8_ProductsArray['product_name'];?></h3>
+                    <h4>$<?php echo $row_8_ProductsArray['product_price'];?></h4>
                 </div>
             </div>
         </div>
@@ -141,12 +147,32 @@ $productsArray = $stmt->fetch();
                 </div>
                 <div class="footer-card" id="footer-card">
                     <div class="subscribeEmail" id="subscribeEmail">
-                        <input type="email" id="subscribeEmail" placeholder="Your e-mail">
-                        <button class="emailBtn" id="emailBtn" type="button">Subscribe Now!</button>
+                        <form method="post" action="">
+                            <input type="email" name="subscriberEmail" id="subscribeEmail" placeholder="Your e-mail">
+                            <button class="emailBtn" id="emailBtn" type="submit" name="submit">Subscribe Now!</button>
+                        </form>
                     </div>
+
+                    <?php
+                    if(isset($_POST['submit'])) {
+                        if(filter_var($_POST['subscriberEmail'], FILTER_VALIDATE_EMAIL)) {
+                            // $subscriberEmail = $_POST['subscriberEmail'];
+                            // Code to insert email in your subscribers' table.
+                            echo "<script type='text/javascript'>alert('You have been successfully added to the subscriber list');</script>";
+                        } else {
+                            echo "<script type='text/javascript'>alert('Invalid email');</script>";
+                        }
+
+                    }
+                    ?>
                 </div>
                 <div class="footer-card" id="footer-card">
                     <p>Follow Us</p>
+                    <div class="social-icons">
+                        <i class='bx bxl-facebook-circle'></i>
+                        <i class='bx bxl-instagram-alt' ></i>
+                        <i class='bx bxl-twitter'></i>
+                    </div>
                 </div>
                 <div class="footer-copyRight" id="footer-copyRights">
                     <p>All Rights Reserved. WDV Final Project, &copy;<?php echo date('Y');?>.</p>

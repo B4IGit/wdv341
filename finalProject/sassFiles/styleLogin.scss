@@ -6,7 +6,7 @@
 }
 
 $color-primary: #afc793;
-$color-secondary: #524457;
+$color-secondary: #5156AFFF;
 $color-accent: #ece8f8;
 $color-container: #edede9;
 
@@ -75,25 +75,27 @@ nav .navBar {
     .navLinks a:nth-child(1),
     .navLinks a:nth-child(2),
     .navLinks a:nth-child(3),
-    .navLinks a:nth-child(4) {
+    .navLinks a:nth-child(4),
+    .navLinks a:nth-child(5){
         color: $text-primary;
         text-decoration: none;
         padding: 0 2em;
     }
 
-    .navLinks a:nth-child(4) {
+    .navLinks a:nth-child(5) {
         margin-right: 1em;
     }
 
     .navLinks a:nth-child(1):hover,
     .navLinks a:nth-child(2):hover,
     .navLinks a:nth-child(3):hover,
-    .navLinks a:nth-child(4):hover {
+    .navLinks a:nth-child(4):hover,
+    .navLinks a:nth-child(5):hover{
         text-transform: uppercase;
     }
 
 
-    .navLinks a:nth-child(5) {
+    .navLinks a:nth-child(6) {
         color: $color-accent;
         background-color: $color-secondary;
         text-decoration: none;
@@ -101,12 +103,17 @@ nav .navBar {
         border-radius: 16px;
     }
 
-    a:nth-child(5):hover {
+    a:nth-child(6):hover {
         color: $color-secondary;
         background-color: $color-accent;
         border: 2px solid $color-secondary;
     }
+
+    button.mobileMenuIcon {
+        display: none;
+    }
 }
+
 
 //END nav.NavBar
 
@@ -306,9 +313,19 @@ nav .navBar {
     }
 }
 
+.nested-grid p:nth-child(1) {
+    font-size: 1.2rem;
+}
+
 .copy-rights {
     padding: 8px;
     border-radius: 0 0 16px 16px;
+}
+
+.bx {
+    color: $color-accent;
+    font-size: 2rem;
+    margin-top: 1rem;
 }
 
 //  end second footer wrapper (middle, middle)
@@ -346,6 +363,14 @@ nav .navBar {
             "main"
             "footer"
             "rights";
+    }
+
+    nav .navLinks {
+        display: none;
+    }
+
+    nav .navBar button.mobileMenuIcon {
+        display: initial;
     }
 
     .nested-grid {

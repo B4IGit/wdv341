@@ -40,6 +40,7 @@ session_start();
     <title>Lists Products</title>
     <link rel="stylesheet" href="../sassFiles/styleLogin.scss">
     <link rel="stylesheet" href="../sassFiles/styleLogin.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <style>
 
@@ -111,11 +112,26 @@ session_start();
                 <div class="navLinks" id="navLinks">
                     <a href="/wdv341/finalProject/index.php">Home</a>
                     <a href="#about">About</a>
-                    <a href="#shop">Contact</a>
+                    <a href="../contact.php">Contact</a>
+                    <a href="#shop">Shop</a>
                     <a href="#checkout">Checkout</a>
                     <a href="/wdv341/finalProject/sessionFolder/login.php">Login</a>
                 </div>
             </div>
+
+            <script type="text/javascript">
+                function deleteProduct() {
+                    var conf = confirm("Are you sure you want to delete this product?");
+                    if (conf == true) {
+                        // If Yes is clicked, return true.
+                        return true;
+                    }
+                    else {
+                        // If No is clicked, return to the page.
+                        return false;
+                    }
+                }
+            </script>
 
         <main class="style">
             <section class="products-container">
@@ -131,6 +147,10 @@ session_start();
                     echo '<div>' . $row['product_time_entered'] . '</div>';
                     echo '<div>' . $row['product_date_inserted'] . '</div>';
                     echo '<div>' . $row['product_date_updated'] . '</div>';
+                    $productID = $row['product_id'];
+                    // add 'update' and 'delete' to listProducts.php
+                    echo "<div><a href='updateProduct.php?productID=$productID'><button id='update'>Update</button></a></div>";
+                    echo "<div><a href='deleteProduct.php?productID=$productID' onclick='return deleteProduct()'><button id='delete'>Delete</button></a></div>";
                     echo "\n";
                     echo'</div>';
                     //$eventID = $row['products_id'];
@@ -157,6 +177,11 @@ session_start();
                     </div>
                     <div class="footer-card">
                         <p>Follow Us</p>
+                        <div class="social-icons">
+                            <i class='bx bxl-facebook-circle'></i>
+                            <i class='bx bxl-instagram-alt' ></i>
+                            <i class='bx bxl-twitter'></i>
+                        </div>
                     </div>
                 </div>
             </footer>

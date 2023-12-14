@@ -88,6 +88,7 @@ else {
     <title>Login</title>
     <link rel="stylesheet" href="../sassFiles/styleLogin.scss">
     <link rel="stylesheet" href="../sassFiles/styleLogin.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <style>
         .login-msg span {
@@ -115,7 +116,8 @@ else {
                     <div class="navLinks" id="navLinks">
                         <a href="/wdv341/finalProject/index.php">Home</a>
                         <a href="#about">About</a>
-                        <a href="#shop">Contact</a>
+                        <a href="../contact.php">Contact</a>
+                        <a href="#shop">Shop</a>
                         <a href="#checkout">Checkout</a>
                         <a href="/wdv341/finalProject/sessionFolder/login.php">Login</a>
                     </div>
@@ -197,6 +199,11 @@ else {
                     </div>
                     <div class="footer-card">
                         <p>Follow Us</p>
+                        <div class="social-icons">
+                            <i class='bx bxl-facebook-circle'></i>
+                            <i class='bx bxl-instagram-alt' ></i>
+                            <i class='bx bxl-twitter'></i>
+                        </div>
                     </div>
                 </div>
             </footer>

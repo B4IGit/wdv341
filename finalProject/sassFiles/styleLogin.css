@@ -54,31 +54,36 @@ nav .navBar .navLogo {
 nav .navBar .navLinks a:nth-child(1),
 nav .navBar .navLinks a:nth-child(2),
 nav .navBar .navLinks a:nth-child(3),
-nav .navBar .navLinks a:nth-child(4) {
+nav .navBar .navLinks a:nth-child(4),
+nav .navBar .navLinks a:nth-child(5) {
   color: #000;
   text-decoration: none;
   padding: 0 2em;
 }
-nav .navBar .navLinks a:nth-child(4) {
+nav .navBar .navLinks a:nth-child(5) {
   margin-right: 1em;
 }
 nav .navBar .navLinks a:nth-child(1):hover,
 nav .navBar .navLinks a:nth-child(2):hover,
 nav .navBar .navLinks a:nth-child(3):hover,
-nav .navBar .navLinks a:nth-child(4):hover {
+nav .navBar .navLinks a:nth-child(4):hover,
+nav .navBar .navLinks a:nth-child(5):hover {
   text-transform: uppercase;
 }
-nav .navBar .navLinks a:nth-child(5) {
+nav .navBar .navLinks a:nth-child(6) {
   color: #ece8f8;
-  background-color: #524457;
+  background-color: #5156af;
   text-decoration: none;
   padding: 8px 32px;
   border-radius: 16px;
 }
-nav .navBar a:nth-child(5):hover {
-  color: #524457;
+nav .navBar a:nth-child(6):hover {
+  color: #5156af;
   background-color: #ece8f8;
-  border: 2px solid #524457;
+  border: 2px solid #5156af;
+}
+nav .navBar button.mobileMenuIcon {
+  display: none;
 }
 
 .login-container {
@@ -101,7 +106,7 @@ nav .navBar a:nth-child(5):hover {
   margin: 2rem auto;
 }
 .login-wrapper .login-page h2 {
-  color: #524457;
+  color: #5156af;
 }
 .login-wrapper .login-page ol {
   margin-left: 2rem;
@@ -109,7 +114,7 @@ nav .navBar a:nth-child(5):hover {
 .login-wrapper h1 {
   font-size: 1.815em;
   text-align: center;
-  color: #524457;
+  color: #5156af;
 }
 .login-wrapper .input-box {
   width: 100%;
@@ -127,7 +132,7 @@ nav .navBar a:nth-child(5):hover {
   width: 100%;
   height: 100%;
   background: transparent;
-  border: 2px solid #524457;
+  border: 2px solid #5156af;
   outline: none;
   border-radius: 40px;
   font-size: 1em;
@@ -146,7 +151,7 @@ nav .navBar a:nth-child(5):hover {
   margin-right: 3px;
 }
 .login-wrapper .remember-forgot a {
-  color: #524457;
+  color: #5156af;
   text-decoration: none;
 }
 .login-wrapper .remember-forgot a:hover {
@@ -156,7 +161,7 @@ nav .navBar a:nth-child(5):hover {
   width: 100%;
   height: 45px;
   color: #ece8f8;
-  background-color: #524457;
+  background-color: #5156af;
   border: none;
   outline: none;
   border-radius: 40px;
@@ -167,9 +172,9 @@ nav .navBar a:nth-child(5):hover {
   font-weight: 600;
 }
 .login-wrapper .submitBtn:hover {
-  color: #524457;
+  color: #5156af;
   background-color: #ece8f8;
-  border: 2px solid #524457;
+  border: 2px solid #5156af;
 }
 .login-wrapper .register-link {
   font-size: 1em;
@@ -177,7 +182,7 @@ nav .navBar a:nth-child(5):hover {
   margin: 0.5em 0;
 }
 .login-wrapper .register-link a {
-  color: #524457;
+  color: #5156af;
   text-decoration: none;
 }
 .login-wrapper .register-link a:hover {
@@ -212,7 +217,7 @@ nav .navBar a:nth-child(5):hover {
   position: relative;
   display: inline-flex;
   padding: 3px;
-  border: 2px solid #524457;
+  border: 2px solid #5156af;
   background-color: #edede9;
 }
 .nested-grid > :nth-child(2) .subscribeEmail input::placeholder {
@@ -220,10 +225,10 @@ nav .navBar a:nth-child(5):hover {
 }
 .nested-grid > :nth-child(2) .subscribeEmail button {
   color: #fff;
-  background-color: #524457;
+  background-color: #5156af;
   width: 10em;
   padding: 3px;
-  border: 2px solid #524457;
+  border: 2px solid #5156af;
   border-radius: 8px;
   position: absolute;
   right: 0;
@@ -233,9 +238,19 @@ nav .navBar a:nth-child(5):hover {
   background-color: #ece8f8;
 }
 
+.nested-grid p:nth-child(1) {
+  font-size: 1.2rem;
+}
+
 .copy-rights {
   padding: 8px;
   border-radius: 0 0 16px 16px;
+}
+
+.bx {
+  color: #ece8f8;
+  font-size: 2rem;
+  margin-top: 1rem;
 }
 
 @media (max-width: 1024px) {
@@ -243,6 +258,12 @@ nav .navBar a:nth-child(5):hover {
     grid-template-columns: 1fr;
     grid-template-rows: auto minmax(5rem, auto) 1fr minmax(5rem, auto) auto;
     grid-template-areas: "nav" "main" "footer" "rights";
+  }
+  nav .navLinks {
+    display: none;
+  }
+  nav .navBar button.mobileMenuIcon {
+    display: initial;
   }
   .nested-grid {
     grid-template-columns: 1fr;

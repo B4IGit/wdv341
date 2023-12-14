@@ -5,6 +5,8 @@
     $number2 = 27;
     $total = $number1 + $number2;
 
+    
+
 
 
 ?>
